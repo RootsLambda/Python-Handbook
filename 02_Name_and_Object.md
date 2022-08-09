@@ -1,33 +1,33 @@
 # 2.1 Dynamic Typing là gì?
 
-Python cho phép chúng ta không khai báo loại (type) đối tượng mà tập lệnh (script) của chúng ta sử dụng. Trên thực tế, hầu hết các chương trình thậm chí không nên quan tâm đến các kiểu cụ thể, vì thế chúng ta có thể áp dụng linh hoạt (flexibility) trong nhiều ngữ cảnh.
+Python cho phép chúng ta không khai báo kiểu(type) đối tượng mà tập lệnh(script) của chúng ta sử dụng. Trên thực tế, hầu hết các chương trình thậm chí không nên quan tâm đến các kiểu cụ thể, vì thế chúng ta có thể áp dụng linh hoạt(flexibility) trong nhiều ngữ cảnh.
 
-Ví dụ: khi chúng ta nhập a = 3 vào một phiên(session) hoặc tệp chương trình (file program) làm thế nào Python biết rằng a phải là đại diện cho một số nguyên? Đối với vấn đề đó, Python biết a là gì?
+Ví dụ: khi chúng ta nhập a = 3 vào một phiên(session) hoặc tệp chương trình(file program) làm thế nào Python biết rằng a phải là đại diện cho một số nguyên? Đối với vấn đề đó, Python biết a là gì?
 
-Khi bạn bắt đầu đặt những câu hỏi như vậy, bạn đã chuyển sang lĩnh vực của Python
-Dynamic Typing. Trong Python, các loại được xác định tự động trong thời gian chạy (automatically at runtime), không phải để phản hồi các khai báo trong mã của bạn (declarations in your code). Điều này có nghĩa là bạn không bao giờ khai báo các biến trước thời hạn (declare variables
+Khi bạn bắt đầu đặt những câu hỏi như vậy, bạn đã chuyển sang lĩnh vực 
+Dynamic Typing của Python. Trong Python, các loại được xác định tự động trong thời gian chạy(automatically at runtime), không phải để phản hồi các khai báo trong mã của bạn(declarations in your code). Điều này có nghĩa là bạn không bao giờ khai báo các biến trước thời hạn(declare variables
 ahead of time).
 
 Một cách dễ hiểu hơn nếu bạn ghi nhớ rằng tất cả gồm các biến, đối tượng và liên kết giữa chúng.
 # 2.2 Biến(Variables), đối tượng(Objects) và tham khảo(References)
 Ngôn ngữ Python, việc ta nhập a=3 diễn ra như sau:
 
-**Tạo biến (Variable creation)**
++ **Tạo biến(Variable creation)**
 
-Một biến (tức là tên), như a, được tạo khi mã của bạn gán giá trị cho nó lần đầu tiên.
+Một biến(tức là tên) như a, được tạo khi mã của bạn gán giá trị cho nó lần đầu tiên.
 Các nhiệm vụ trong tương lai thay đổi giá trị của tên đã được tạo. Về mặt kỹ thuật,
 Python phát hiện một số tên trước khi mã của bạn chạy, nhưng bạn có thể nghĩ về nó như thể
 các phép gán ban đầu tạo ra các biến.
 
-**Kiểu của biến(Variable types)**
++ **Kiểu của biến(Variable types)**
 
 Một biến không bao giờ có bất kỳ thông tin kiểu hoặc ràng buộc(constraints) nào được liên kết với nó. Các biến có bản chất chung, chúng luôn luôn chỉ tham chiếu(refer) đến một đối tượng cụ thể(particular object) tại một thời điểm cụ thể(particular point).
 
-**Sử dụng biến đổi(Variable use)**
++ **Sử dụng biến đổi(Variable use)**
 
 Khi một biến xuất hiện trong một biểu thức(expression), nó ngay lập tức được thay thế bằng đối tượng mà nó hiện đang đề cập đến.
 
-**Tóm lại** các biến được tạo khi được gán (assigned), có thể tham chiếu đến bất kỳ loại đối tượng nào và phải được chỉ định trước. Do đó có nghĩa là bạn không bao giờ cần khai báo tên
+**Tóm lại** các biến được tạo khi được gán(assigned), có thể tham chiếu đến bất kỳ loại đối tượng nào và phải được chỉ định trước. Do đó có nghĩa là bạn không bao giờ cần khai báo tên
 được sử dụng trong chương trình của bạn, nhưng bạn phải khởi tạo tên trước khi có thể cập nhật chúng.
 ```python
 a=3
@@ -38,17 +38,18 @@ Các bước trong ngôn ngữ Python
 3. Liên kết biến a với đối tượng mới 3.
 
 <img algin='center' src='images/Name_and_Object.jpg'>
-Các liên kết từ names đến object có thể gọi là tham chiếu (References) và nó thực hiện như một con trỏ (pointer) trong bộ nhớ.
+
+Các liên kết từ names đến object có thể gọi là tham chiếu(References) và nó thực hiện như một con trỏ(pointer) trong bộ nhớ.
 
 Bất cứ khi nào các biến sau đó được sử dụng, Python tự động chuyển biến thành đối tượng
 bởi các liên kết. Nói một cách cụ thể:
 
-+ Biến là các lối vào (entry) trong bảng hệ thống, có khoảng trắng(spaces) cho các liên kết (links) đến các đối tượng.
-+ Đối tượng là các phần của bộ nhớ được cấp phát (allocated memory), có đủ không gian để biểu diễn các giá trị.
-+ Tham chiếu là các con trỏ tự động (automatically pointers) theo sau từ các biến đến các đối tượng.
++ Biến là các lối vào(entry) trong bảng hệ thống, có khoảng trắng(spaces) cho các liên kết(links) đến các đối tượng.
++ Đối tượng là các phần của bộ nhớ được cấp phát(allocated memory), có đủ không gian để biểu diễn các giá trị.
++ Tham chiếu là các con trỏ tự động(automatically pointers) theo sau từ các biến đến các đối tượng.
 
 
-Về mặt kỹ thuật, các đối tượng có nhiều cấu trúc hơn là chỉ đủ không gian để biểu diễn giá trị của chúng. Mỗi đối tượng cũng có hai trường tiêu đề tiêu chuẩn: một bộ chỉ định loại được sử dụng để đánh dấu loại đối tượng(mark type of object) và bộ đếm tham chiếu (reference counter) được sử dụng để xác định thời điểm có thể đòi lại đối tượng.
+Về mặt kỹ thuật, các đối tượng có nhiều cấu trúc hơn là chỉ đủ không gian để biểu diễn giá trị của chúng. Mỗi đối tượng cũng có hai trường tiêu đề tiêu chuẩn: một bộ chỉ định loại được sử dụng để đánh dấu loại đối tượng(mark type of object) và bộ đếm tham chiếu(reference counter) được sử dụng để xác định thời điểm có thể đòi lại đối tượng.
 ```python
 a=3
 a='spam'
@@ -86,11 +87,11 @@ nó không được tham chiếu ở bất kỳ nơi nào khác) nghĩa là khô
 
 Python sử dụng hai chiến lược cấp phát bộ nhớ:
 
-+ Reference counting (đếm số tham chiếu)
++ Reference counting(đếm số tham chiếu)
 
-+ Garbage collection (trình thu gom bộ nhớ)
++ Garbage collection(trình thu gom bộ nhớ)
 
-Bên trong trình thông dịch của Python (Python interpreter) sử dụng reference counting để quản lý bộ nhớ bằng cách giữ một bộ đếm trong mọi đối tượng giữ theo dõi số lượng tham chiếu hiện đang trỏ đến đối tượng đó. Ngay sau khi bộ đếm này giảm xuống 0, không gian bộ nhớ của đối tượng sẽ tự động giải phóng tức là phần bộ nhớ đã cấp phát cho đối tượng đó sẽ được thu hồi lại. Trong ví dụ trước, chúng ta giả định rằng mỗi lần x được chỉ định cho một đối tượng, bộ đếm tham chiếu của đối tượng trước đó giảm xuống 0, khiến nó được lấy lại. Lợi ích hữu hình ngay lập tức của việc thu gom rác là nó có nghĩa là bạn có thể sử dụng các đối tượng một cách tự do mà không cần phải phân bổ hoặc giải phóng dung lượng trong tập lệnh của bạn.
+Bên trong trình thông dịch của Python(Python interpreter) sử dụng reference counting để quản lý bộ nhớ bằng cách giữ một bộ đếm trong mọi đối tượng giữ theo dõi số lượng tham chiếu hiện đang trỏ đến đối tượng đó. Ngay sau khi bộ đếm này giảm xuống 0, không gian bộ nhớ của đối tượng sẽ tự động giải phóng tức là phần bộ nhớ đã cấp phát cho đối tượng đó sẽ được thu hồi lại. Trong ví dụ trước, chúng ta giả định rằng mỗi lần x được chỉ định cho một đối tượng, bộ đếm tham chiếu của đối tượng trước đó giảm xuống 0, khiến nó được lấy lại. Lợi ích hữu hình ngay lập tức của việc thu gom rác là nó có nghĩa là bạn có thể sử dụng các đối tượng một cách tự do mà không cần phải phân bổ hoặc giải phóng dung lượng trong tập lệnh của bạn.
 
 Python sẽ dọn dẹp không gian không sử dụng cho bạn khi chương trình của bạn chạy. Trong thực tế, điều này loại bỏ một lượng đáng kể mã kế toán(keepbooking) bắt buộc bằng các ngôn ngữ cấp thấp hơn chẳng hạn như C và C ++.
 
@@ -148,6 +149,7 @@ b=a
 b
 ```
 `Output: 3`
+
 <img algin='center' src='images/Share_Reference_1.jpg'>
 
 Bạn nghĩ biến a sẽ được liên kết với biến b bằng lệnh gán nếu nghĩ vậy thì chúc mừng bạn đã suy nghĩ sai, mà biến b sẽ được tham chiếu tới cùng object của biến a đó là số 3.
