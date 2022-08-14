@@ -1,9 +1,9 @@
 # 3.1 Giới thiệu Assignment Statements
-Ở dạng cơ bản chúng ta sử dụng phép gán bằng cách gán object bên phải cho name bên trái, một số điều cần nhắc lại: 
+Chúng ta sử dụng phép gán bằng cách gán object bên phải cho name bên trái một số điều cần lưu ý là: 
 
 + **Phép gán tạo tham chiếu đối tượng:** các phép gán trong Python lưu trữ các tham chiếu đến các đối tượng trong tên hoặc các thành phần cấu trúc dữ liệu, chúng luôn tạo tham chiếu đến các đối tượng thay vì sao chép các đối tượng. Vì lý do đó, các biến Python giống như con trỏ hơn là vùng lưu trữ dữ liệu.
-+ **Tên được tạo khi được gán lần đầu:** Python tạo một tên biến đầu tiên thời gian bạn gán cho nó một giá trị (tức là một tham chiếu đối tượng), vì vậy không cần khai báo trước như một vài ngôn ngữ khác. 
-+ **Tên phải được chỉ định trước khi được tham chiếu:** Đó là một lỗi khi sử dụng một cái tên mà bạn chưa chỉ định giá trị. Python đưa ra một ngoại lệ nếu bạn thử, thay vì trả về một số loại giá trị mặc định không rõ ràng. Điều này hóa ra là rất quan trọng trong Python vì tên không được khai báo trước.
++ **Tên được tạo khi được gán lần đầu:** Python tạo một tên biến đầu tiên thời gian bạn gán cho nó một giá trị(tức là một tham chiếu đối tượng), vì vậy không cần khai báo trước như một vài ngôn ngữ khác. 
++ **Tên phải được chỉ định trước khi được tham chiếu:** Sẽ xảy lỗi khi sử dụng cái tên nào đó mà bạn chưa chỉ định giá trị. Python đưa ra một ngoại lệ. Điều này hóa ra là rất quan trọng trong Python vì tên không được khai báo trước.
 
 + **Một số hoạt động thực hiện phép gán ngầm.**
 ## Các assignment thường dùng
@@ -97,17 +97,16 @@ for (a,*b,c) in [(1,2,3,4),(5,6,7,8)]:
          3,2
  ```      
  # 3.2 Argument
- Như chúng ta sẽ thấy, các đối số (còn gọi là tham số) được gán cho tên trong một hàm, nhưng chúng liên quan nhiều hơn đến các tham chiếu đối tượng hơn là với các phạm vi biến.
-
+Như chúng ta sẽ thấy, các đối số (còn gọi là tham số) được gán cho tên trong một hàm.
 Python cung cấp các công cụ bổ sung, chẳng hạn như keywords, default và collectors đối số tùy ý và trình trích xuất cho phép linh hoạt trong cách các đối số được gửi đến một hàm.
 
 ## Tóm tắt các nhiệm vụ của đối số:
 
-+ **Các đối số được chuyển bằng cách tự động gán các đối tượng cho biến cục bộ những cái tên.** Các đối số của hàm, tham chiếu đến các đối tượng được chia sẻ được gửi bởi người gọi, chỉ là một phiên bản khác của phép gán Python tại nơi làm việc. Vì tham khảo được triển khai dưới dạng con trỏ, tất cả các đối số, trên thực tế, được truyền bởi con trỏ. Các đối tượng được truyền dưới dạng các đối số không bao giờ được sao chép tự động.
++ **Các đối số được chuyển bằng cách tự động gán các đối tượng cho biến cục bộ những cái tên.** Các đối số của hàm, tham chiếu đến các đối tượng được chia sẻ được gửi bởi người gọi. Vì tham khảo được triển khai dưới dạng con trỏ, tất cả các đối số, trên thực tế, được truyền bởi con trỏ. Các đối tượng được truyền dưới dạng các đối số không bao giờ được sao chép tự động.
 
-+ **Việc gán cho các tên đối số bên trong một hàm không ảnh hưởng đến trình gọi.** Tên đối số trong tiêu đề hàm trở thành tên cục bộ mới khi hàm chạy, trong phạm vi của hàm. Không có răng cưa giữa tên đối số hàm và tên biến trong phạm vi của trình gọi.
++ **Việc gán cho các tên đối số bên trong một hàm không ảnh hưởng đến trình gọi.** Tên đối số trong defalts hàm trở thành tên cục bộ mới khi hàm chạy chỉ trong phạm vi của hàm đó.
 
-+ **Thay đổi đối số đối tượng có thể thay đổi trong một hàm có thể ảnh hưởng đến người gọi.** Mặt khác, vì các đối số chỉ được gán cho các đối tượng được truyền vào, các hàm có thể thay đổi các đối tượng có thể thay đổi được truyền vào tại chỗ và kết quả có thể ảnh hưởng đến người gọi. Các đối số có thể thay đổi có thể là đầu vào và đầu ra cho các hàm.
++ **Thay đổi đối số đối tượng có thể thay đổi trong một hàm có thể ảnh hưởng đến lời gọi.** Mặt khác, vì các đối số chỉ được gán cho các đối tượng được truyền vào, các hàm có thể thay đổi các đối tượng có thể thay đổi được truyền vào tại chỗ và kết quả có thể ảnh hưởng đến lời gọi. Các đối số có thể thay đổi có thể là đầu vào và đầu ra cho các hàm.
 ## Cách truyền của Python:
 
 + **Các đối số bất biến(Immutable arguments) được truyền "theo giá trị".** Các đối tượng như số nguyên và chuỗi được chuyển bằng tham chiếu đối tượng thay vì bằng cách sao chép, và bạn cũng không thể thay đổi các đối tượng bất biến bằng một giá trị nào đó, trừ khi bạn tạo ra bản sao.
@@ -156,3 +155,124 @@ X,L
 | def func(\*\*name)| Hàm số  | Nhận có đối số keyword còn lại của dictionary|
 | def func(\*other,name)| Hàm số    | Các đối số được truyền khi trong lời gọi|
 | def func(\*,name=value)| Hàm số  | Các đối số được truyền khi trong lời gọi|
+
+### Truyền bởi vị trí
+```python
+def f(a, b, c): 
+    print(a, b, c)
+f(1,2,3)
+```
+`Output: 1 2 3`
+
+### Truyền bởi tên
+```python
+def f(a=1, b=2, c): 
+    print(a, b, c)
+f(3)
+```
+`Output: 1 2 3`
+
+### Truyền bởi iterable
+```python
+def f(*args): 
+    print(args)
+f(3,4,4)
+```
+`Output: (3 4 4)
+### Truyền bởi dictionary
+```python
+def f(**args): 
+    print(args)
+f(x=4,y=5)
+```
+`Output: {'x': 4, 'y': 5}`
+### Truyền hỗn hợp normal, iterable, dictionary
+```python
+def f(a, *pargs, **kargs): 
+    print(a, pargs, kargs)
+f(1,2,3,x=4,y=5)
+```
+`Output: 1 (2, 3) {'x': 4, 'y': 5}`
+
+### Lời gọi arguments
+```python
+def func(a, b, c, d): # hàm số định nghĩa kiểu normal
+    print(a, b, c, d)
+args=(1,2,3,4) # tuple
+func(*args) # Nén thành argument
+```
+`Output: 1 2 3 4`
+### Lời gọi keyword arguments
+```python
+kwargs = {'a': 1, 'b': 2, 'c': 3,'d':4}
+func(**kwargs)
+```
+`Output: 1 2 3 4`
+### Lời gọi hỗn hợp 
+```python
+func(1, *(2, 3), **{'d': 4})
+```
+`Output: 1 2 3 4`
+```python
+func(1, c=3, *(2,), **{'d': 4})
+```
+`Output: 1 2 3 4`
+### Tạo ra hàm print trong Python 3
+```python
+# Call signature: print3(*args, sep=' ', end='\n', file=sys.stdout)
+import sys
+def print3(*args, **kargs):
+    sep = kargs.get('sep', ' ') # Keyword arg defaults
+    end = kargs.get('end', '\n')
+    file = kargs.get('file', sys.stdout)
+    output = ''
+    first = True
+    for arg in args:
+        output += ('' if first else sep) + str(arg)
+        first = False
+    file.write(output + end)
+print3(1, 2, 3,end=',')
+```
+`Output: 1,2,3`
+### Chỉ sử dụng arguments
+```python
+import sys
+def print3(*args, sep=' ', end='\n', file=sys.stdout):
+    output = ''
+    first = True
+    for arg in args:
+        output += ('' if first else sep) + str(arg)
+        first= False
+    file.write(output + end)
+print3(99,101,end='bob')
+```
+`Output: 99 101bob`
+### Tạo hàm mixmax
+```python
+def minmax(test, *args):
+    res = args[0]
+    for arg in args[1:]:
+        if test(arg, res):# tương đương test(arg,res) !=None
+            res = arg
+    return res
+def lessthan(x, y): 
+    return x < y 
+def grtrthan(x, y):
+    return x > y
+print(minmax(lessthan, 4, 2, 1, 5, 6, 3))
+print(minmax(grtrthan, 4, 2, 1, 5, 6, 3))
+```
+Ouput:
+```    
+1
+6
+```
+
+
+
+
+
+
+
+
+
