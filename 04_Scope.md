@@ -9,9 +9,9 @@ Các mã khi đóng gói để sử dụng lại, các hàm còn thêm một l�
 
 Quy tắc này có nghĩa là:
 
-+ Các tên được gán bên trong một def chỉ có thể được nhìn thấy bởi mã trong def đó. Bạn thậm chí không thể tham chiếu đến các tên như vậy từ bên ngoài hàm.
++ **Các tên được gán bên trong một def chỉ có thể được nhìn thấy bởi mã trong def đó.**
 
-+ Các tên được gán bên trong một def không xung đột với các biến bên ngoài def, ngay cả khi cùng tên được sử dụng ở những nơi khác. 
++ **Các tên được gán bên trong một def không xung đột với các biến bên ngoài def.**
 
 Trong mọi trường hợp, phạm vi của một biến (nơi nó có thể được sử dụng) luôn được xác định bởi nơi
 nó được gán trong mã nguồn của bạn và không liên quan gì đến hàm nào gọi hàm nào.
@@ -21,6 +21,7 @@ Trên thực tế các biến có thể được chỉ định ở ba vị trí 
 + Nếu một biến được gán bên trong một def, thì nó là cục bộ **local** của hàm đó.
 
 + Nếu một biến được gán trong một def đi kèm, thì biến đó là phi địa phương **non local** đối với các hàm lồng nhau.
+
 + Nếu một biến được gán bên ngoài tất cả các định nghĩa, nó là toàn cầu **gobal** chung của chương trình.
 
 Ví dụ: trong tệp mô-đun sau, phép gán X = 99 tạo ra một biến toàn cục có tên là X (hiển thị ở mọi nơi trong tệp này), nhưng phép gán X = 88 tạo ra một biến biến cục bộ X (chỉ hiển thị trong câu lệnh def)
@@ -49,7 +50,7 @@ Trong một câu lệnh def:
 
 + Việc gán tên tạo hoặc thay đổi tên địa phương(name local) theo mặc định.
 
-+ Tên tham chiếu khi tìm kiếm nằm gồm bốn phạm vi: local, enclose local, gobal,built-in.
++ Tên tham chiếu khi tìm kiếm nằm gồm bốn phạm vi: local, enclose local, gobal, built-in.
 
 + Các tên được khai báo trong các câu lệnh global và nonlocal ánh xạ các tên được gán cho các phạm vi bultin-in và phạm vi hàm số.
 
